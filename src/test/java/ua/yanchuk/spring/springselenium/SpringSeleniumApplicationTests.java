@@ -25,6 +25,9 @@ class SpringSeleniumApplicationTests {
     @Value("${myusername}")
     private String username;
 
+    @Value("${TEST_URL:https://www.goole.com}")  // Providing Default value (will be taken if epsent in Properties)
+    private  String testUrl;
+
     @Test
     void contextLoads() {
 
@@ -32,8 +35,9 @@ class SpringSeleniumApplicationTests {
         System.out.println(this.fruits.size());
         System.out.println(this.timeout);
         System.out.println(this.username);
+        System.out.println(this.testUrl);
 
-//        user.printDetails();
+        user.printDetails();
     }
 
 	/*
