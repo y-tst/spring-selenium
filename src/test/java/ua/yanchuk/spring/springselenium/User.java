@@ -1,5 +1,8 @@
 package ua.yanchuk.spring.springselenium;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 
     private Address address;
