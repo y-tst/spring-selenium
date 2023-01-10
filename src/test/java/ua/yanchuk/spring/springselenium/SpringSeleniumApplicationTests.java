@@ -55,4 +55,12 @@ class SpringSeleniumApplicationTests {
 		user.printDetails();
 	 */
 
+    @Autowired
+    private Television tv;
+
+    @Test
+    public void tvTest() {
+        this.tv.playMovie();
+    }
+
 }
