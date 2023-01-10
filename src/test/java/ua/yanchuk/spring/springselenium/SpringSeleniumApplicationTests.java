@@ -1,5 +1,6 @@
 package ua.yanchuk.spring.springselenium;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,6 +29,9 @@ class SpringSeleniumApplicationTests {
     @Value("${TEST_URL:https://www.goole.com}")  // Providing Default value (will be taken if epsent in Properties)
     private  String testUrl;
 
+    @Autowired
+    private  Faker faker;
+
     @Test
     void contextLoads() {
 
@@ -38,6 +42,10 @@ class SpringSeleniumApplicationTests {
         System.out.println(this.testUrl);
 
         user.printDetails();
+
+//        Faker faker = new Faker();
+        System.out.println(faker.name().firstName());
+
     }
 
 	/*
