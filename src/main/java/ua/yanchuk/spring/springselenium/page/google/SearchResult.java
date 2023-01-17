@@ -18,7 +18,7 @@ public class SearchResult extends Base {
     }
 
     @Override
-    protected boolean isAt() {
+    public boolean isAt() {
         return this.wait.until(d -> !this.searchResults.isEmpty());
     }
 }

@@ -30,7 +30,7 @@ public class GooglePage extends Base {
     }
 
     @Override
-    protected boolean isAt() {
+    public boolean isAt() {
         return this.searchComponent.isAt();
     }
 }
