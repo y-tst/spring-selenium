@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import ua.yanchuk.spring.springselenium.page.Base;
+import ua.yanchuk.spring.springselenium.utils.ScreenShotUtil;
 
 @Component
 public class GooglePage extends Base {
