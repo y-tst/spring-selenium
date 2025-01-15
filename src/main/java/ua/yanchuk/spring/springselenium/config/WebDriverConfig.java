@@ -22,14 +22,14 @@ public class WebDriverConfig {
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver() {
-        WebDriverManager.chromedriver().driverVersion("108.0.5359.125").setup();
+        WebDriverManager.chromedriver().driverVersion("131.0.6778.265").setup();
         return new ChromeDriver();
     }
 
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver() {
-        WebDriverManager.firefoxdriver().driverVersion("108.0.2 (64-bit)").setup();
+        WebDriverManager.firefoxdriver().driverVersion("134.0 (64-bit)").setup();
         return new FirefoxDriver();
     }
 

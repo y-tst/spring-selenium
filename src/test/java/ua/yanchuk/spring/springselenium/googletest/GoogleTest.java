@@ -1,5 +1,7 @@
 package ua.yanchuk.spring.springselenium.googletest;
 
+import com.google.common.util.concurrent.Uninterruptibles;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -9,6 +11,7 @@ import ua.yanchuk.spring.springselenium.page.google.GooglePage;
 import ua.yanchuk.spring.springselenium.utils.ScreenShotUtil;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class GoogleTest extends SpringBaseTesNGTest {
 
@@ -24,7 +27,9 @@ public class GoogleTest extends SpringBaseTesNGTest {
         this.googlePage.goTo();
         Assert.assertTrue(this.googlePage.isAt());
 
-        this.googlePage.getSearchComponent().search("spring boot");
+        Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
+
+        this.googlePage.getSearchComponent().search("environment ");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
 //        this.screenShotUtil.takeScreenShot("img.png");
